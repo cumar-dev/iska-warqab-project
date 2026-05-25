@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRout from "./Router/user.js"
+import catRout  from "./Router/Category.js"
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
