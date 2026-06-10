@@ -2,13 +2,15 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRout from "./Router/user.js"
-import catRout  from "./Router/Category.js"
+import categoryRout  from "./Router/Category.js"
+import transactionRout from "./Router/Transaction.js"
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use("/users", userRout);
-app.use("/category", catRout);
+app.use("/category", categoryRout);
+app.use("/transaction", transactionRout);
 mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log("✅ MongoDB connected"))
   .catch(err => console.log("❌ Connection error:", err));
